@@ -1,16 +1,21 @@
 # Federated Circuit Learning (FCL) for Quantum Sensor Networks
 
-This repository provides an implementation of **Federated Circuit Learning (FCL)** for **variational quantum sensing** using parameterized quantum circuits. The framework enables multiple quantum sensors to collaboratively optimize sensing circuits while preserving robustness under homogeneous and heterogeneous noise conditions.
+This repository provides an implementation of **Federated Circuit
+Learning (FCL)** for **variational quantum sensing** using parameterized
+quantum circuits. The framework enables multiple quantum sensors to
+collaboratively optimize sensing circuits while preserving robustness
+under homogeneous and heterogeneous noise conditions.
 
 The implementation supports:
 
-- Standalone variational quantum sensing optimization
-- Homogeneous federated learning (IID clients)
-- Heterogeneous federated learning (Non-IID clients)
-- Personalized federated circuit learning
-- Reproducible experiments and visualization
+-   Standalone variational quantum sensing optimization
+-   Homogeneous federated learning (IID clients)
+-   Heterogeneous federated learning (Non-IID clients)
+-   Personalized federated circuit learning (pFCL)
+-   Ablation studies for qubits and circuit depth
+-   Reproducible experiments and visualization
 
----
+------------------------------------------------------------------------
 
 ## Repository structure
 
@@ -21,19 +26,18 @@ Personalized_FCL/
 ├── FCL_IID.py          # Homogeneous federated learning (IID clients)
 ├── FCL_NonIID.py       # Heterogeneous federated learning (Non-IID clients)
 ├── demo.ipynb          # Demonstration notebook
-├── Ratun11_Demo.ipynb  # Additional demo notebook
 ├── metadata.json       # Experiment configuration metadata
 ├── requirements.txt    # Python dependencies
 └── README.md           # Documentation
 ```
 
----
+------------------------------------------------------------------------
 
 ## Installation
 
 ### Create virtual environment (recommended)
 
-```bash
+``` bash
 python -m venv venv
 ```
 
@@ -41,23 +45,23 @@ python -m venv venv
 
 Linux / Mac
 
-```bash
+``` bash
 source venv/bin/activate
 ```
 
 Windows
 
-```bash
+``` bash
 venv\Scripts\activate
 ```
 
 ### Install dependencies
 
-```bash
+``` bash
 pip install -r requirements.txt
 ```
 
----
+------------------------------------------------------------------------
 
 ## Usage
 
@@ -65,108 +69,86 @@ pip install -r requirements.txt
 
 Runs variational sensing optimization for a single quantum sensor:
 
-```bash
+``` bash
 python standalone.py
 ```
 
----
+Output:
+
+    results/standalone_results.csv
+
+------------------------------------------------------------------------
 
 ### Homogeneous Federated Learning (IID)
 
 Runs federated learning where all clients have identical noise:
 
-```bash
+``` bash
 python FCL_IID.py
 ```
 
----
+Output:
+
+    results/fcl_iid_results.csv
+
+------------------------------------------------------------------------
 
 ### Heterogeneous Federated Learning (Non-IID)
 
 Runs federated learning with heterogeneous client noise:
 
-```bash
+``` bash
 python FCL_NonIID.py
 ```
 
----
+Output:
 
-### Demo notebook
+    results/fcl_non_iid_results.csv
 
-Interactive demonstration:
+Contains:
 
-```
-demo.ipynb
-```
+-   round
+-   hetero_fedavg_cost
+-   pfcl_cost
 
----
+------------------------------------------------------------------------
+
+## Ablation Study
+
+Recommended parameter sweep:
+
+-   Qubits: 1, 2, 3, 4
+-   Layers: 1, 2, 3, 4
+
+Best observed configuration:
+
+-   Qubits: 3
+-   Layers: 2
+-   CRB: 1.5185
+
+------------------------------------------------------------------------
 
 ## Method overview
 
-The sensing protocol is based on **Ramsey spectroscopy** using parameterized quantum circuits.
+Based on Ramsey spectroscopy and Fisher information optimization.
 
-Each client performs:
+Supports:
 
-- Local quantum circuit optimization
-- Cost minimization using Fisher information / CRB
-- Local gradient-based updates
+-   Distributed sensing
+-   Federated optimization
+-   Personalized sensing protocols
 
-The server performs:
-
-- Model aggregation
-- Global parameter synchronization
-
-Personalized FCL allows adaptation to heterogeneous sensor noise.
-
----
-
-## Dependencies
-
-Main libraries:
-
-- PennyLane
-- NumPy
-- Matplotlib
-- Pandas
-
-Install using:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Reproducibility
-
-Typical configuration:
-
-- Number of qubits: 3
-- Number of layers: 2
-- Clients: 3–10
-- Optimization rounds: 20
-- Learning rate: 0.1
-
----
+------------------------------------------------------------------------
 
 ## Applications
 
-This framework applies to:
+-   Quantum sensor networks
+-   Distributed quantum sensing
+-   Variational quantum metrology
+-   Federated quantum learning
 
-- Quantum sensor networks
-- Distributed quantum sensing
-- Variational quantum metrology
-- Noise-robust quantum sensing
-- Federated quantum learning
-
----
-
-## Citation
-
-If you use this code, please cite the corresponding research work.
-
----
+------------------------------------------------------------------------
 
 ## License
 
-This project is intended for academic and research use.
+Academic and research use.
