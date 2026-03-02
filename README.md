@@ -15,13 +15,13 @@ The sensing protocol is based on **Ramsey spectroscopy**, and optimization is pe
 
 ## Repository structure
 
-Personalized_FCL/
-│
-├── standalone.py # Standalone variational sensing optimization
-├── FCL_IID.py # Homogeneous federated learning (IID clients)
-├── FCL_NonIID.py # Heterogeneous federated learning (Non-IID clients)
-├── demo.ipynb # Demonstration notebook
-├── Ratun11_Demo.ipynb # Additional demo notebook
-├── metadata.json # Experiment configuration metadata
-├── requirements.txt # Python dependencies
-└── README.md # Documentation
+| File | Description |
+|-----|-------------|
+| standalone.py | Standalone variational sensing optimization |
+| FCL_IID.py | Homogeneous federated learning |
+| FCL_NonIID.py | Heterogeneous federated learning |
+| demo.ipynb | Demo notebook |
+| Ratun11_Demo.ipynb | Additional demo |
+| metadata.json | Experiment configuration |
+| requirements.txt | Dependencies |
+| README.md | Documentation |
