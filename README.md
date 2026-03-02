@@ -34,6 +34,7 @@ The sensing protocol is based on **Ramsey spectroscopy**, and optimization is pe
 
 ```bash
 python -m venv venv
+```bash
 
 ### Activate environment
 
