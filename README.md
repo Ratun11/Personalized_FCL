@@ -28,9 +28,6 @@ The sensing protocol is based on **Ramsey spectroscopy**, and optimization is pe
 
 ---
 
-
----
-
 ## Installation
 
 ### Create virtual environment (recommended)
@@ -38,3 +35,36 @@ The sensing protocol is based on **Ramsey spectroscopy**, and optimization is pe
 ```bash
 python -m venv venv
 
+### Activate environment
+
+Linux / Mac
+
+```bash
+source venv/bin/activate
+
+Windows
+
+```bash
+venv\Scripts\activate
+
+Install dependencies
+
+```bash
+pip install -r requirements.txt
+
+---
+
+## Usage
+
+### 1. Standalone variational sensing
+
+Runs optimization for a single quantum sensor:
+
+```bash
+python standalone.py
+
+This performs:
+
+- Circuit initialization
+- Variational optimization
+- Cost minimization (Cramér–Rao bound)
