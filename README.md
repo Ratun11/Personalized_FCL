@@ -25,3 +25,16 @@ The sensing protocol is based on **Ramsey spectroscopy**, and optimization is pe
 | metadata.json | Experiment configuration |
 | requirements.txt | Dependencies |
 | README.md | Documentation |
+
+---
+
+
+---
+
+## Installation
+
+### Create virtual environment (recommended)
+
+```bash
+python -m venv venv
+
